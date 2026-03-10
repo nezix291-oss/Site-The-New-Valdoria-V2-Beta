@@ -1,1 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>The New Valdoria</title>
 
+<style>
+
+body{
+background:black;
+color:white;
+font-family:Arial;
+margin:0;
+}
+
+a{
+color:yellow;
+}
+
+header{
+text-align:center;
+padding:30px;
+border-bottom:2px solid yellow;
+}
+
+section{
+padding:30px;
+}
+
+.card{
+background:#111;
+padding:20px;
+margin:20px;
+border-radius:10px;
+box-shadow:0 0 10px black;
+}
+
+button{
+background:yellow;
+color:black;
+border:none;
+padding:10px 20px;
+cursor:pointer;
+border-radius:5px;
+font-weight:bold;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin:5px 0;
+background:#222;
+color:white;
+border:1px solid yellow;
+}
+
+#wheel{
+width:300px;
+height:300px;
+border-radius:50%;
+border:6px solid yellow;
+margin:auto;
+position:relative;
+overflow:hidden;
+}
+
+.slice{
+position:absolute;
+width:50%;
+height:50%;
+transform-origin:100% 100%;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🏰 The New Valdoria</h1>
+<p>IP : 151.240.100.21:25582 | Version : 1.21.11</p>
+
+<a href="https://discord.com/invite/yKXFcCNq5S">Discord</a> |
+<a href="https://www.tiktok.com/@the_new_valdoria">TikTok</a> |
+<a href="https://nezix291-oss.github.io/Site-d-affichage-open-ou-non/">Site associé</a>
+</header>
+
+<section class="card">
+
+<h2>🏰 Bienvenue sur The New Valdoria !</h2>
+
+<p>
+Plongez au cœur d'une aventure épique où votre imagination est la seule limite.
+The New Valdoria n'est pas seulement un serveur Minecraft, c'est une nation en pleine expansion,
+une communauté soudée et un monde riche en découvertes.
+</p>
+
+<h3>✨ Pourquoi nous rejoindre ?</h3>
+
+<p>
+Un Monde Unique : Explorez des paysages façonnés pour l'aventure.<br><br>
+
+Une Économie Stable : Participez aux échanges, créez votre shop et devenez le joueur le plus riche.<br><br>
+
+Des Événements : Quêtes, tournois et animations organisés par notre staff.<br><br>
+
+Un Staff à l'Écoute : Une équipe de modération présente pour vous garantir un jeu fluide.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>📰 Actualités du Serveur</h2>
+
+<h3>🏛️ Un Spawn Monumental</h3>
+
+<p>
+Dès vos premiers pas sur The New Valdoria, laissez-vous impressionner par la grandeur de notre spawn.
+</p>
+
+<h3>🌀 Choisissez votre destination</h3>
+
+<p>
+🟢 Vert : Entrainement<br>
+🔴 Rouge : Survie<br>
+🟡 Jaune : Shop
+</p>
+
+<h3>🌍 Les Terres Sauvages</h3>
+
+<p>
+Bienvenue dans la zone de survie ! C’est ici que commence votre véritable épopée.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>⚡ Performance</h2>
+
+<p>
+Notre priorité est de vous offrir une expérience de jeu fluide et sans ralentissements.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>🎮 Mini Jeux</h2>
+
+<h3>🕹️ Fast/Bloc</h3>
+
+<p>
+Le principe est de traverser le vide en posant des blocs de sable sans tomber !
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>🎬 TikTok</h2>
+
+<p>
+🔥 Sneak Peeks | 😂 Best-Of | 🔴 Événements en direct
+</p>
+
+<a href="https://www.tiktok.com/@the_new_valdoria">Voir le TikTok</a>
+
+</section>
+
+
+<section class="card">
+
+<h2>👑 Hiérarchie</h2>
+
+<p style="color:#ff0000">👑 Fondateur 👑</p>
+<p style="color:#e800ff">💍 Co-fondateur</p>
+<p style="color:#ff7700">🇩🇪🙋‍♂️ Dictateur Suprême</p>
+<p style="color:#3498db">🔧 Développeur</p>
+<p style="color:#9d4747">🕵️‍♂️ Gérant Formateur</p>
+<p style="color:#f1c40f">💻 Manager</p>
+<p style="color:#c2c736">⚔️ Administrateur</p>
+<p style="color:#ccd4b1">🗡️ Responsable</p>
+<p style="color:#0800ff">🛡️ Modérateur</p>
+<p style="color:#1bcc2d">🪓 Modérateur Test</p>
+<p style="color:#00ffff">🎭 Animateur</p>
+<p style="color:#71368a">🎥 Créateur de contenu</p>
+<p style="color:#9b59b6">💎 VIP</p>
+<p style="color:#da914d">💛 OG</p>
+<p style="color:#2364fd">🌌 Membre</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>🎡 Roue de la chance</h2>
+
+<div id="wheel"></div>
+
+<br>
+
+<button onclick="spin()">Tourner la roue</button>
+
+<p id="result"></p>
+
+</section>
+
+
+<section class="card">
+
+<h2>🎫 Ouvrir un Ticket</h2>
+
+<input id="discord" placeholder="Pseudo Discord">
+<input id="minecraft" placeholder="Pseudo Minecraft">
+
+<textarea id="reason" placeholder="Raison"></textarea>
+
+<button onclick="createTicket()">Créer le ticket</button>
+
+</section>
+
+
+<section class="card">
+
+<h2>🛠 Panel Admin</h2>
+
+<div id="tickets"></div>
+
+</section>
+
+
+<section class="card">
+
+<h2>🤝 Partenaires</h2>
+
+<a href="https://discord.com/invite/B965U82B6Q">Serveur Communautaire | FR</a><br>
+<a href="https://discord.com/invite/7WbeQkztVe">Mioxss Community</a><br>
+<a href="https://discord.com/invite/pK8Wddyhyp">Heart SMP</a>
+
+</section>
+
+
+<section class="card">
+
+<h2>📧 Contact</h2>
+
+<p>thenewvaldoria@gmail.com</p>
+
+</section>
+
+
+<script>
+
+let tickets=[];
+
+function createTicket(){
+
+let discord=document.getElementById("discord").value
+let mc=document.getElementById("minecraft").value
+let reason=document.getElementById("reason").value
+
+let ticket={
+discord:discord,
+mc:mc,
+reason:reason
+}
+
+tickets.push(ticket)
+
+updateTickets()
+
+}
+
+function updateTickets(){
+
+let container=document.getElementById("tickets")
+
+container.innerHTML=""
+
+tickets.forEach((t,i)=>{
+
+container.innerHTML+=`
+<div class="card">
+Discord : ${t.discord}<br>
+Minecraft : ${t.mc}<br>
+Raison : ${t.reason}<br>
+<button onclick="closeTicket(${i})">Fermer</button>
+</div>
+`
+
+})
+
+}
+
+function closeTicket(i){
+
+tickets.splice(i,1)
+
+updateTickets()
+
+}
+
+function spin(){
+
+let r=Math.random()*100
+
+let result=""
+
+if(r<12){
+
+result="🎉 Gagné !"
+
+}
+
+else if(r<24){
+
+result="🎉 Gagné !"
+
+}
+
+else{
+
+result="❌ Perdu"
+
+}
+
+document.getElementById("result").innerText=result
+
+}
+
+</script>
+
+</body>
+</html>
